@@ -1,5 +1,6 @@
-import React, {useState} from 'react';
-import './App.css';
+import React, {useState,useEffect} from 'react';
+import '../css/App.css';
+import img from '../img/햄깅.jpg';
 
 //const App=() => {} 과 function App() {}은 동일
 function App () {
@@ -26,18 +27,24 @@ function App () {
     //현재 할 일의 목록 배열을 복사
     const updateTodos = [...todos];
     //복사된 배열에서 지정된 자리값(index)를 1개 제거
-    updateTodos.splice(index,1)
+    updateTodos.splice(index,1);
       //updateTodos : 복사된 배열
       //splice : 제거 (slice와 비교)
       //splice : 배열의 내용을 수정하거나 삭제하고, 필요에 따라 새로운 요소를 추가 가능
     //내가 제거하고싶은 할 일을 제거한 후 할 일 목록 재 설정
     setTodos(updateTodos);
-  }
+  };
+
+  //useEffect Hook추가
+  useEffect(()=>{
+    console.log('todos 변경 완료 : ', todos);
+  },[todos]);
 
   return (
     <div>
       <h2>useState를 활용한 To do List</h2>
       <div>
+        <img src={img} /><br/>
         <input 
           type="text" 
           value={newTodo} 
