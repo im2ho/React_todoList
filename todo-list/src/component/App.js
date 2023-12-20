@@ -41,17 +41,18 @@ function App () {
   },[todos]);
 
   return (
-    <div>
+    <div style={{textAlign:"center"}}>
       <h2>useState를 활용한 To do List</h2>
       <div>
-        <img src={img} /><br/>
+        <img src={img} width='500' /><br/>
         <input 
           type="text" 
           value={newTodo} 
           onChange={(e) => setNewTodo(e.target.value)}
         />
         <button onClick={addTodo}>할 일 추가하기</button>
-        <ul>
+        <ul className='container'>
+          
           {todos.map((todo, index)=>(
             //key={index} : map 함수로 요소를 생성할 대 각 요소에 고유한 key 값을 지정
             //react 각 값에 대한 번호를 부여함으로써 목록을 부여된 번호로 추척하기 위해 사용
@@ -60,6 +61,7 @@ function App () {
               <button onClick={()=>removeTodo(index)}>삭제하기</button>
             </li>
           ))}
+          
         </ul>
       </div>
     </div>

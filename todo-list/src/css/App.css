@@ -1,34 +1,65 @@
-/* src/App.css */
-.App {
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  background-color: #ffb7b7;
+  color: white;
+  padding: 1rem;
   text-align: center;
 }
 
-h2 {
-  color: #333;
-}
-
-input {
-  margin-right: 8px;
-}
-
 ul {
-  list-style-type: none;
+  list-style: none;
   padding: 0;
+  margin: 0;
 }
 
-li {
-  margin: 8px 0;
-  padding: 8px;
-  border: 1px solid #ccc;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+nav li {
+  display: inline;
+  margin-right: 10px;
 }
 
-button {
-  background-color: #f49e36;
+nav a {
   color: white;
-  border: none;
-  padding: 8px;
-  cursor: pointer;
+  text-decoration: none;
+}
+
+section {
+  padding: 2rem;
+  text-align: center;
+}
+
+footer {
+  background-color: #ffb7b7;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+.container {
+  width: 250px;
+  height: 140px;
+  overflow: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+.container::-webkit-scrollbar {
+  width: 10px;
+}
+.container::-webkit-scrollbar-thumb {
+  background-color: #2f3542;
+  border-radius: 10px;
+  background-clip: padding-box;
+  border: 2px solid transparent;
+}
+.container::-webkit-scrollbar-track {
+  background-color: grey;
+  border-radius: 10px;
+  box-shadow: inset 0px 0px 5px white;
 }
